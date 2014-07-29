@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="essotProductApp">
+	<head>
+        <title>Product Page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+
+        <link href="css/megadrop.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css'>
+        <link href="css/style.css"  rel='stylesheet' type='text/css'>
+		<link href="css/cloudzoom.css"  rel='stylesheet' type='text/css'>
+		
+		<script src="js/cloudzoom.js"  type="text/javascript"></script>
+
+		<style type="text/css">
+   		   .bs-example{
+		    	margin: 20px;
+		   }
+		</style>
+    </head>
+    <body ng-controller="essotProductController">
+	<div ng-include src="'header.html'"></div>
+    <div class="main-container" style="padding-top:20px;">
+       	<div class="product-img-container">
+   		   	<img id="productImage" class = "cloudzoom"> 
+            <br>
+            <div id="product-views">
+					<img ng-repeat="image in thumbImages.images" ng-mouseover="toggleEnCode($index)" ng-src="image/{{product.details.productDetails.skuName}}/{{image}}" > 
+            </div>
+        </div>        
+        <div id="product-desc">
+        	<h1>{{product.details.productDetails.name}}</h1>
+            <h4>{{product.details.productDetails.description}}</h4>
+            <!--<p>{{product.details.productDetails.longDescription}}</p>-->
+            <table width="100%" border="0" cellspacing="0" cellpadding="3"><form name="form1" method="post" action="">
+              <tr>
+                <td width="44%" colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <!--<tr>
+                    <td><span style="color:#FF0000; font-size:25px; font-family: 'Roboto', sans-serif; font-weight:bold;">${{product.details.productDetails.price}}</span></td>
+                  </tr>-->
+                  <tr>
+                  	<br></br><br></br><br></br><br></br><br></br>
+                  </tr>
+                  <tr>
+                    <td><span style="color:#333; font-size:25px; font-family: 'Roboto', sans-serif; font-weight:bold;">MRP: {{product.details.productDetails.price}}</span></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><!--<span id="add-cart"><a href="#">ADD TO CART</a></span>--></td>
+                  </tr>
+                </table></td>
+                <td width="56%">&nbsp;</td>
+              </tr>
+              </form>
+          </table>
+        </div>
+       	<div class="clearfix"></div>
+        <div class="col-md-8" id="product-overview">
+        	<h2>PRODUCT OVERVIEW</h2>
+            <div style="float:left; margin-right:50px;">
+		       	<h3>Features</h3>
+                <ul>
+                	<li ng-repeat="feature in product.details.features">{{feature.featureValue}}</li>
+                </ul>
+            </div>
+			<div style="float:left">
+				<h3>Product Specifications</h3>
+                <ul>
+					<li ng-repeat="spec in product.details.specs">{{spec.techKey}} : {{spec.techValue}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div> 
+      <div align="left" style="padding-top:20px; font-size:13px;"><strong>Stylecode:</strong>{{product.details.defaultEnCode}}</div>
+    </div>
+	<div ng-include src="'footer.html'"></div>
+	<script src="js/essot-product.js"  type="text/javascript"></script>
+</body>
+</html>

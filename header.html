@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html lang="en">
+
+ <head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+  <meta charset="UTF-8">
+
+  <title>Essot-Header</title>
+
+ </head>
+
+ <body>
+
+		<div class="innowyn-top-bar" id="innowyn-top">
+
+            <div class="container">
+
+                <div class="subheader">
+
+                   
+
+                    <div id="email" class="pull-right">
+
+                            <a href="/">Home</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>   
+
+        <div class="innowyn-top-menu">
+
+            <div class="container">
+
+                <div class="navbar navbar-default" role="navigation">
+
+                    <div class="container">
+
+                        <div class="navbar-header">
+
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                                <span class="sr-only">Toggle navigation</span>
+
+                                <span class="icon-bar"></span>
+
+                                <span class="icon-bar"></span>
+
+                                <span class="icon-bar"></span>
+
+                                </button>
+
+                                <a href="/" class="navbar-brand"><img src="image/logo-1.jpg" alt="logo"/></a>
+
+                        </div>
+
+                        <div class="navbar-collapse collapse" id="innowyn-nav-bar">                        
+
+				 		<ul class="nav clearfix animated" ng-show="$parent.categoryPage">
+
+							<li ng-repeat="item in $parent.menus.menu">
+
+								
+
+								<a ng-href="#" ng-click="loadCategoryPage(item)">{{item.categoryName}}</a>
+
+								<div class="container-4">
+
+								<div class="col1" ng-repeat="subItem in item.subCategories">
+
+									<a ng-href="#" ng-click="loadCategoryPage(subItem)"><h3>{{subItem.categoryName}}</h3></a>
+
+								</div>
+
+								</div>
+
+							</li>
+
+    					</ul>
+
+						<ul class="nav clearfix animated" ng-hide="$parent.categoryPage">
+
+							<li ng-repeat="item in $parent.menus.menu">
+
+								<a ng-href="./category#/{{item.categoryID}}" ng-click="window.location.reload(true)">{{item.categoryName}}</a>
+
+								<div class="container-4">
+
+								<div class="col1" ng-repeat="subItem in item.subCategories">
+
+									<a ng-href="category#/{{subItem.categoryID}}" ng-click="window.location.reload(true)"><h3>{{subItem.categoryName}}</h3></a>
+
+								</div>
+
+								</div>
+
+							</li>
+
+    					</ul>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+

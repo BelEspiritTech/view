@@ -1,0 +1,207 @@
+<!doctype html>
+<html ng-app="essotHomeApp">
+<head>
+    <title>ESSOT G | Home </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/jquery.shuffle-images.js"></script>
+	
+		<link href="css/megadrop.css" rel="stylesheet" type="text/css">
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css'>
+		<link href="css/style.css"  rel='stylesheet' type='text/css'>
+	<style>
+	
+    .reload:hover{
+      background: #317af2;
+    }
+  
+    .btn:hover, .btn:hover {
+      background: #317af2;
+    }
+  
+	.btns {
+      width: 410px;
+      margin: 50px auto;
+    }
+    
+	.credit {
+      text-align: center;
+      color: #888;
+      padding: 10px 10px;
+      margin: 0 0 0 0;
+      float: left;
+      width: 100%;
+    }
+    
+	.credit a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+    
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: block;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background:#f5f5f5;
+      font-weight: bold;
+      font-size: 13px;
+      color: #888;
+      -webkit-transition: all 200ms ease-out;
+      -moz-transition: all 200ms ease-out;
+      -o-transition: all 200ms ease-out;
+      transition: all 200ms ease-out;
+    }
+    
+	.back:hover {
+      background: #eee;
+    }
+  
+    .container {
+      width: 980px;
+      margin: 0 auto;
+    }
+    
+    .page-container {
+      float: left;
+      width: 100%;
+      margin: 0 auto 300px;
+      position: relative;
+    }
+    
+    .header {
+      overflow: hidden;
+      clear: both;
+    }
+    
+    .bg {
+      position: absolute;
+      min-height: 100% !important;
+      width: 100%;
+      z-index: 0;
+    }
+    
+    .ibg-bg {
+      position: absolute;
+    }
+    
+	#btns {
+      text-align: center;
+      margin: 50px auto;
+      height: 50px;
+      overflow: hidden;
+      float: left;
+      width: 100%;
+    }
+    
+    
+    .main {
+      position: relative;
+    }
+    
+    .shuffle-me {
+      width: 25%;
+      height: 150px;
+      margin: 2%;
+      display: block;
+      position: relative;
+      float: left;
+      width: 26%;
+      height: 209px;
+    }
+
+    .info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      padding: 20px;
+      text-align: center;
+      display: block;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .info h1 {
+      font-weight: bold;
+      color: white;
+      font-size: 20px;
+      margin: 55px 0 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0;
+      
+    }
+
+    .info h1 a {
+     color: #fff; 
+    }
+    
+	.info h2 {
+      margin-top: 0;
+      color: white;
+      font-size: 14px;
+      font-family: georgia;
+      font-style: italic;
+    }
+
+    .shuffle-group {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .shuffle-group .shuffle-me {
+		width: 304px;
+		float: left;
+		margin: 5px;
+		height: 225px;
+    }
+
+    .shuffle-group .shuffle-me:first-child {
+      width: 32%;
+	  float: left;
+	  height: 225px;
+    }
+    .shuffle-group .shuffle-me:first-child h1 {
+      margin-top: 190px;
+      font-size: 30px;
+    }
+
+	</style>
+</head>
+
+<body ng-controller="essotHomeController">
+<div id="wrapper">
+	<div ng-include src="'header.html'"></div>
+	<div class="container" style="padding-top:45px;padding-bottom:45px;">
+		<div class="shuffle-group">
+	        <div class="shuffle-me col-md-4" ng-repeat="item in  displayCatalogues.categories">
+    	      <a href="category#/{{item.categoryID}}" class="info"></a>
+    	      <div class="images">
+  				<img src= image/{{item.categoryName}}.jpg>
+  			  </div>
+	      </div>
+        </div>
+      </div>
+  
+     <div class="clearfix"></div>
+
+	<div ng-include src="'footer.html'"></div>
+</div>
+
+    <script src="js/bootstrap.min.js"  type="text/javascript"></script>
+    <script src="js/stickUp.min.js"  type="text/javascript"></script>
+	<script src="js/essot-home.js"  type="text/javascript"></script>
+</body>
+<html>

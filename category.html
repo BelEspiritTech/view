@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="essotCategoryApp">
+    <head>
+        <title>ESSOT-Category</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+        <link href="css/megadrop.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css'>
+        <link href="css/style.css"  rel='stylesheet' type='text/css'>
+    </head>
+    
+    <body ng-controller="essotCategoryController">
+        <div ng-include src="'header.html'"></div>
+		<div>
+           <div>
+             <div id="innowyn-carousel" class="carousel slide" data-ride="carousel">
+				 <ol class="carousel-indicators">
+                    <li ng-repeat="item in  products.bannerList" data-target="#innowyn-carousel" data-slide-to="{{$index}}" ng-class="{active : $first}"></li>
+                </ol>
+                <div class="carousel-inner">
+                   <div ng-repeat="item in  products.bannerList" class="item" ng-class="{active : $first}">
+                        <div class="container">                
+                            <a href="product#/{{item}}">
+								<img ng-src="image/{{item}}/{{item}}_banner.jpg">
+							</a>
+                        </div> 
+                    </div>
+                 </div>
+                <a class="left carousel-control" href="#innowyn-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#innowyn-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <div class="innowyn-team" id="innowyn-about">
+          <div class="main-container">
+             <div class="row"></div>
+             <div class="clearfix"> </div>
+               <ul style="padding-top:40px;">
+                  <li ng-repeat="item in  products.products">
+                  <br></br>
+                    <div id="gallery">
+						<a href="product#/{{item.skuName}}">
+						<div align="center"><h2>{{item.name}}</h2></div>
+                        <div class="text-center">
+							<div class="member-thumb">
+                               <img ng-src=image/{{item.skuName}}/{{item.skuName}}_medium.jpg>
+							<div class="thumb-overlay">
+               					<img ng-src="image/logo1.png"> 
+             				</div>
+                         </div>
+                         <br></br>
+                         <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                           <tr>
+                             <td>&nbsp;</td>
+                             <td width="" align="center"><span style="color:#051a49; font-size:13px; font-weight: bold;font-family:Arial, Helvetica, sans-serif;">MRP: {{item.price}}</span></td>
+                           </tr>
+                         </table>
+						 </a>
+                         </div>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	    <div class="clearfix"></div>
+		<div ng-include src="'footer.html'"></div>
+		
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js"  type="text/javascript"></script>
+        <script src="js/stickUp.min.js"  type="text/javascript"></script>
+		<script src="js/essot-category.js"  type="text/javascript"></script>
+    </body>
+</html>
