@@ -1,24 +1,31 @@
 /* Credit: http://www.innowyn.com */
 
-body, html { overflow-x:hidden; }
+body, html {/*overflow-y:hidden;*/
+	    width: 100%;
+	    height: 100%;
+	    }
 
 body {
     background-color: #ffffff;
     font-family:  'Open Sans', Arial, Helvetice Neue, sans-serif;
     font-size: 12px;
-	height: 100%;
 	
 	font-weight: 300; 
 	font-style: normal; 
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
+	    width: 100%;
+	    height: 100%;
+	
 }
-
-#wrapper {
-	min-height: 100%;
-	position: relative !important;
+#faddingBannerDiv{
+   /*  width: 100%;
+	height: 100%;
+   margin-left: 10%;
+    margin-right: 10%;
+	position: absolute;
+  border: 3px solid #ccc; */
 }
-
 
 h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neue, sans-serif; }
 
@@ -37,7 +44,7 @@ padding-left: 0;
 margin-bottom: 0;
 list-style: none;
 padding-left: 230px;
-padding-top: 5px;
+padding-top: 12px;
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
@@ -50,17 +57,16 @@ padding-top: 5px;
 }
 
 .innowyn-top-bar {
-    min-height: 40px;
+    min-height: 20px;
     /*background-color:#eeeeee;*/
 }
 
 .innowyn-top-menu {
- min-height: 70px;
+ min-height: 30px;
 background-color: #ffffff;
 z-index: 5000;
 width: 100%;
 border-bottom: 1px solid #ccc;
-/*border-top: 1px solid #ccc;*/
 }
 
 .innowyn-top-menu .navbar-toggle {
@@ -69,7 +75,7 @@ border-bottom: 1px solid #ccc;
 
 .innowyn-top-menu .navbar-brand {
     padding: 0;
-    margin: 5px 0 0 -160px;
+    margin: 10px 0 0 -160px;
 }
 
 /* ------ Carousel ----- */
@@ -544,21 +550,37 @@ top: 0;
 .innowyn-footer {
 
 	background:url(../image/footer_bg.jpg) repeat-x;
-	margin-top: 100px;
+	margin-top: 0px;
 	position : relative;
-    bottom: 0px;
-	width : 100%
+	width : 100%;
+	height: 10%;
+	padding-top: 15px;
+	bottom: 0px;
+	left: 0px;
 }
+.home-footer {
 
+	background:url(../image/footer_bg.jpg) repeat-x;
+	margin-top: 0px;
+	position : fixed;
+	width : 100%;
+	height: 10%;
+	padding-top: 15px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 5000;
+}
 .footer_container {
-	 
+	
+	text-align: center;	 
 /*	margin-bottom:20px;*/
 }
 
 .footer_bottom_content {
-	margin: auto;
-
-	font-size: 14px;
+	/*margin: auto;*/
+	alignment-adjust: auto;
+	padding-top: 10px;    
+	font-size: 10px;
 	color:#333333;
 }
 
@@ -691,7 +713,7 @@ ul.innowyn-project-gallery  li  a img:hover {
 #li-style li{
 	display:block;	
 	color:#fff;
-	font-size:16px;
+	font-size:12px;
 	padding-bottom:5px;
 }
 
@@ -700,7 +722,7 @@ ul.innowyn-project-gallery  li  a img:hover {
 	text-decoration:none;
 	float:left;
 	font-weight:400;
-	font-size:14px;
+	font-size:12px;
 	border-bottom:1px solid rgba(255,255,255,0);
 }
 
@@ -710,10 +732,10 @@ ul.innowyn-project-gallery  li  a img:hover {
 
 .footer_container h3{
 	color: #fff;
-float: left;
-font-size: 16px;
+/*float: left;*/
+font-size: 14px;
 font-weight: bold;
-padding-top: 15px;
+/*padding-top: 15px;*/
 }
 
 #product-overview{
@@ -744,7 +766,6 @@ padding-top: 15px;
 #social-links{
 	float:left;	
 }
-
 #social-links a{
 	float:left;
 	margin-right:15px;	
@@ -795,6 +816,7 @@ padding-top: 15px;
 		font-family: 'Roboto', sans-serif, Arial, Helvetica, sans-serif;
 		font-size:20px;
 		font-weight:400;
+
 }
 
 @media (min-width:991px) and (max-width:1200px) {

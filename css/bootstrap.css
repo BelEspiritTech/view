@@ -5800,7 +5800,7 @@ button.close {
   position: relative;
   z-index: 1050;
   width: auto;
-  margin: 10px;
+  margin: 60px;
 }
 
 .modal-content {
@@ -5839,6 +5839,8 @@ button.close {
   min-height: 16.428571429px;
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+  background-color: #031d52;
+  color: #FFFFF0;
 }
 
 .modal-header .close {
@@ -5898,7 +5900,7 @@ button.close {
 @media screen and (min-width: 768px) {
   .modal-dialog {
     width: 600px;
-    margin: 30px auto;
+    margin: 80px auto;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
