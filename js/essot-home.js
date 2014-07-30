@@ -13,7 +13,7 @@ var essotHomeApp = angular.module('essotHomeApp', []);
       }
   ]);
 
-essotHomeApp.controller('essotHomeController', function($scope, $http) {
+essotHomeApp.controller('essotHomeController', function($scope, $http, $location) {
 
   $http.get('http://122.160.164.121:8080/essotg/rest/category/menu')
        .success(function(data) {
@@ -24,17 +24,22 @@ essotHomeApp.controller('essotHomeController', function($scope, $http) {
 			.success(function(data) {
 				$scope.loaded = true;
 				$scope.displayCatalogues = data;
-				$scope.currVal = 0;
-				$scope.fadeArray = new Array();
 				
+				$scope.cathref = '#/';
+				if($location.host() != 'www.essotglobal.com'){
+						$scope.cathref = '.html#/';
+				}
+				
+				$scope.fadeArray = new Array();
 				var categories = $scope.displayCatalogues.categories
 				for(i=0;i<categories.length; i++){
 					var categoryArray = new Array();
 					categoryArray.push("image/"+categories[i].categoryName+".jpg");
-					categoryArray.push("category.html#/"+categories[i].categoryID);
+					categoryArray.push("category"+$scope.cathref+categories[i].categoryID);
 					categoryArray.push("_self");
 					$scope.fadeArray.push(categoryArray);
 				}
+				
 				var width =$(window).width()*0.90; 
 				var height=$(window).height()*0.79;
 				

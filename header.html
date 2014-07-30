@@ -88,13 +88,13 @@
 
 							<li ng-repeat="item in $parent.menus.menu">
 
-								<a ng-href="./category#/{{item.categoryID}}" ng-click="window.location.reload(true)">{{item.categoryName}}</a>
+								<a ng-href="./category{{cathref}}{{item.categoryID}}" ng-click="window.location.reload(true)">{{item.categoryName}}</a>
 
 								<div class="container-4">
 
 								<div class="col1" ng-repeat="subItem in item.subCategories">
 
-									<a ng-href="category#/key={{subItem.categoryID}}" ng-click="window.location.reload(true)"><h3>{{subItem.categoryName}}</h3></a>
+									<a ng-href="category{{cathref}}{{subItem.categoryID}}" ng-click="window.location.reload(true)"><h3>{{subItem.categoryName}}</h3></a>
 
 								</div>
 
