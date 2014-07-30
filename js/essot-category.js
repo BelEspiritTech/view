@@ -17,8 +17,11 @@ essotCategoryApp.controller('essotCategoryController', function($scope, $http, $
   $scope.menus = [];
   $scope.products = [];
   $scope.categoryPage = true;
+  $scope._href = '#/';
+  if($location.host() != 'www.essotglobal.com'){
+	$scope._href = '.html#/';
+  }
   var catID = $location.url().split('/')[1];
-  //var catID = $location.url().split('=')[1]; 
   $http.get('http://122.160.164.121:8080/essotg/rest/category/menu')
        .success(function(data) {
 		 $scope.loaded = true;
@@ -37,7 +40,7 @@ essotCategoryApp.controller('essotCategoryController', function($scope, $http, $
    });
 
     $scope.loadCategoryPage = function(data) {
-		var url = "category#/"+data.categoryID;
+		var url = "category"+$scope._href+data.categoryID;
 		window.location.href = url;	
 		window.location.reload(false);
     };

@@ -19,7 +19,7 @@
                 <div class="carousel-inner">
                    <div ng-repeat="item in  products.bannerList" class="item" ng-class="{active : $first}">
                         <div class="container">                
-                            <a href="product#/{{item}}">
+                            <a href="product{{_href}}{{item}}">
 								<img ng-src="image/{{item}}/{{item}}_banner.jpg">
 							</a>
                         </div> 
@@ -37,7 +37,7 @@
                   <li ng-repeat="item in  products.products">
                   <br></br>
                     <div id="gallery">
-						<a href="product#/{{item.skuName}}">
+						<a href="product{{_href}}{{item.skuName}}">
 						<div align="center"><h2>{{item.name}}</h2></div>
                         <div class="text-center">
 							<div class="member-thumb">

@@ -17,9 +17,11 @@ essotProductApp.controller('essotProductController', function($scope, $http, $lo
   $scope.menus = [];
   $scope.product = [];
   $scope.thumbImages = [];
-  //var skuName = $location.url().split('=')[1];   
+  $scope._href = '#/';
+  if($location.host() != 'www.essotglobal.com'){
+	$scope._href = '.html#/';
+  }
   var skuName = $location.url().split('/')[1];
-
   var imageJsonPath = "image/"+skuName+"/images.json" ;
   
   	$http.get('http://122.160.164.121:8080/essotg/rest/category/menu')
