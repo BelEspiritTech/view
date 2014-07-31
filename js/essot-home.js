@@ -40,7 +40,7 @@ essotHomeApp.controller('essotHomeController', function($scope, $http, $location
 					$scope.fadeArray.push(categoryArray);
 				}
 				
-				var width =$(window).width()*0.90; 
+				var width =$(window).width()*1.00; 
 				var height=$(window).height()*0.79;
 				
 				var mygallery=new fadeSlideShow({   
