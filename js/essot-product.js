@@ -16,6 +16,7 @@ essotProductApp.controller('essotProductController', function($scope, $http, $lo
 
   $scope.menus = [];
   $scope.product = [];
+  $scope.pagetitle = '';
   $scope.thumbImages = [];
   $scope._href = '#/';
   if($location.host() != 'www.essotglobal.com'){
@@ -60,7 +61,7 @@ essotProductApp.controller('essotProductController', function($scope, $http, $lo
 						console.log(err);
 					});
 				 		 
-
+                    $scope.pagetitle = $scope.product.details.productDetails.name;
 
 		}).error(function(err) {
 			console.log(err);

@@ -17,6 +17,7 @@ essotCategoryApp.controller('essotCategoryController', function($scope, $http, $
   $scope.menus = [];
   $scope.products = [];
   $scope.categoryPage = true;
+  $scope.pagetitle = '';
   $scope._href = '#/';
   if($location.host() != 'www.essotglobal.com'){
 	$scope._href = '.html#/';
@@ -26,6 +27,7 @@ essotCategoryApp.controller('essotCategoryController', function($scope, $http, $
        .success(function(data) {
 		 $scope.loaded = true;
 		 $scope.menus = data;
+	  $scope.pagetitle = '';
     }).error(function(err) {
       console.log(err);
    });
@@ -35,6 +37,16 @@ essotCategoryApp.controller('essotCategoryController', function($scope, $http, $
        .success(function(data) {
 		 $scope.loaded = true;
 		 $scope.products = data;
+    }).error(function(err) {
+       console.log(err);
+   });
+  
+  var url = "http://122.160.164.121:8080/essotg/rest/category/list/" + catID;
+   $http.get(url)
+       .success(function(data) {
+		 $scope.loaded = true;
+		 $scope.pagetitle = data;
+		 $scope.pagetitle = $scope.pagetitle.categories;
     }).error(function(err) {
        console.log(err);
    });
