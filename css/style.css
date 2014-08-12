@@ -70,11 +70,11 @@ body {
 
 	width: auto !important;
 
-	max-width: 100%;
+	/*max-width: 100%;
         
-        min-height: 5px;
+        min-height: 5px;*/
 
-	/*max-height: 450px;*/
+	max-height: 450px;
 
 	vertical-align: bottom;
 

@@ -40,20 +40,23 @@ essotCategoryApp.controller('essotCategoryController', function($scope, $http, $
     }).error(function(err) {
        console.log(err);
    });
-  
-  var url = "http://122.160.164.121:8080/essotg/rest/category/list/" + catID;
-   $http.get(url)
-       .success(function(data) {
-		 $scope.loaded = true;
-		 $scope.pagetitle = data;
-		 $scope.pagetitle = $scope.pagetitle.categories;
-    }).error(function(err) {
-       console.log(err);
-   });
 
     $scope.loadCategoryPage = function(data) {
 		var url = "category"+$scope._href+data.categoryID;
 		window.location.href = url;	
 		window.location.reload(false);
     };
+});
+
+essotCategoryApp.controller('essottitleController', function($scope, $http, $location) {
+  var catID = $location.url().split('/')[1];
+  var url = "http://122.160.164.121:8080/essotg/rest/category/list/" + catID;
+   $http.get(url)
+       .success(function(data) {
+		 $scope.loaded = true;
+		 $scope.pagetitle = data;
+		 $scope.pagetitle = 'electronic | '+ $scope.pagetitle.categories + 'essot India';
+    }).error(function(err) {
+       console.log(err);
+   });
 });

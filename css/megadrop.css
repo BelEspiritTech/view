@@ -81,7 +81,7 @@ box-shadow:0px 5px 10px rgba(0,0,0,0.5);
 
 	/* 4 Column */
 	.container-4 { width: 500px; }
-	.container-4 .col1 { width: 25%; }
+	.container-4 .col1 { width: 33%; }
 	.container-4 .col2 { width: 50% }
 	.container-4 .col3 { width: 75% }
 	.container-4 .col4 { width: 100% }
