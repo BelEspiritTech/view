@@ -16,7 +16,6 @@ essotProductApp.controller('essotProductController', function($scope, $http, $lo
 
   $scope.menus = [];
   $scope.product = [];
-  $scope.pagetitle = '';
   $scope.thumbImages = [];
   $scope._href = '#/';
   if($location.host() != 'www.essotglobal.com'){
@@ -60,8 +59,6 @@ essotProductApp.controller('essotProductController', function($scope, $http, $lo
 					}).error(function(err) {
 						console.log(err);
 					});
-				 		 
-                    $scope.pagetitle = $scope.product.details.productDetails.name;
 
 		}).error(function(err) {
 			console.log(err);
@@ -84,4 +81,21 @@ essotProductApp.controller('essotProductController', function($scope, $http, $lo
 		 $('#productImage').CloudZoom(options);  
 		
 	};
+    $scope.getStrSpecValue = function(data1,data2){
+          return data1+ " : " +data2;
+    };
+});
+
+essotProductApp.controller('essotProductPageTitleController', function($scope, $http, $location) {
+          $scope.pagetitle = '';
+          var skuName = $location.url().split('/')[1];
+          var url = "http://122.160.164.121:8080/essotg/rest/product/pagetitle/" + skuName;
+          $http.get(url)
+		 .success(function(data) {
+				$scope.loaded = true;
+				$scope.productName = data;
+                                $scope.pagetitle = "essot " + $scope.productName + " | essot India";
+                    }).error(function(err) {
+              console.log(err);
+          });
 });

@@ -48,7 +48,7 @@
                   <br></br>
                     <div id="gallery">
 						<a href="product{{_href}}{{item.skuName}}">
-						<div align="center"><h2>{{item.name}}</h2></div>
+						<div align="center"><h2 ng-bind="item.name"></h2></div>
                         <div class="text-center">
 							<div class="member-thumb">
                                <img ng-src=image/{{item.skuName}}/{{item.skuName}}_medium.jpg>
@@ -60,7 +60,7 @@
                          <table width="100%" border="0" cellspacing="0" cellpadding="3">
                            <tr>
                              <td>&nbsp;</td>
-                             <td width="" align="center"><span style="color:#051a49; font-size:13px; font-weight: bold;font-family:Arial, Helvetica, sans-serif;">MRP: {{item.price}}</span></td>
+                             <td width="" align="center" style="color:#051a49; font-size:13px; font-weight: bold;font-family:Arial, Helvetica, sans-serif;">MRP: <span ng-bind="item.price"></span></td>
                            </tr>
                          </table>
 						 </a>
