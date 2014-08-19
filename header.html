@@ -68,13 +68,13 @@
 
 								
 
-								<a ng-href="#" ng-click="loadCategoryPage(item)" ng-bind="item.categoryName"></a>
+								<a ng-href="category#/{{item.categoryID}}" ng-click="loadCategoryPage(item)" ng-bind="item.categoryName"></a>
 
 								<div class="container-4">
 
 								<div class="col1" ng-repeat="subItem in item.subCategories">
 
-									<a ng-href="#" ng-click="loadCategoryPage(subItem)"><h3 ng-bind="subItem.categoryName"></h3></a>
+									<a ng-href="category#/{{item.categoryID}}" ng-click="loadCategoryPage(subItem)"><h3 ng-bind="subItem.categoryName"></h3></a>
 
 								</div>
 
@@ -88,13 +88,13 @@
 
 							<li ng-repeat="item in $parent.menus.menu">
 
-								<a ng-href="category{{_href}}{{item.categoryID}}" ng-click="window.location.reload(true)" ng-bind="item.categoryName"></a>
+								<a ng-href="category#/{{item.categoryID}}" ng-click="window.location.reload(true)" ng-bind="item.categoryName"></a>
 
 								<div class="container-4">
 
 								<div class="col1" ng-repeat="subItem in item.subCategories">
 
-									<a ng-href="category{{_href}}{{subItem.categoryID}}" ng-click="window.location.reload(true)"><h3 ng-bind="subItem.categoryName"></h3></a>
+									<a ng-href="category#/{{subItem.categoryID}}" ng-click="window.location.reload(true)"><h3 ng-bind="subItem.categoryName"></h3></a>
 
 								</div>
 
