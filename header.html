@@ -74,15 +74,15 @@
 
 								<div class="col1" ng-repeat="subItem in item.subCategories">
 
-									<a ng-href="category#/{{item.categoryID}}" ng-click="loadCategoryPage(subItem)"><h3 ng-bind="subItem.categoryName"></h3></a>
+									<a ng-href="category#/{{subItem.categoryID}}" ng-click="loadCategoryPage(subItem)"><h3 ng-bind="subItem.categoryName"></h3></a>
 
 								</div>
 
 								</div>
 
 							</li>
-
-    					</ul>
+							
+							    					</ul>
 
 						<ul class="nav clearfix animated" ng-hide="$parent.categoryPage">
 
